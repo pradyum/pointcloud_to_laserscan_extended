@@ -11,6 +11,10 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   sensor_msgs
+  geometry_msgs
+  tf2
+  tf2_ros
+  tf2_geometry_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -112,6 +116,9 @@ catkin_package(
 ###########
 ## Build ##
 ###########
+
+add_executable(pointcloud_to_laserscan src/pointclound_to_laserscan.cpp)
+target_link_libraries(pointcloud_to_laserscan ${catkin_LIBRARIES})
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
